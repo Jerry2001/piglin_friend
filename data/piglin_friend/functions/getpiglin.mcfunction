@@ -1,0 +1,1 @@
+execute run tp @e[tag=leader] @s
