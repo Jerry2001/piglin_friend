@@ -2,7 +2,7 @@
 #function piglin_friend:kill
 team add piglin
 execute unless entity @e[tag=leader] as @p at @s run summon minecraft:villager ~ ~ ~ {Tags:[leader], PersistenceRequired: 1b, Invulnerable:1b, Silent:1b, VillagerData:{level:1,profession:"minecraft:nitwit",type:"minecraft:desert"}}
-execute unless entity @e[tag=Jim] as @e[tag=leader, limit=1] at @s run summon minecraft:piglin ~ ~ ~ {, IsImmuneToZombification: 1b, Tags:[Jim], PersistenceRequired: 1b, Invulnerable:1b, CustomName:"\"Jimmy\"", Attributes:[{Base:0d, Name:"generic.attack_damage"}], ArmorItems:[{Count:1,id:golden_boots, tag:{Damage:0, Enchantments:[{lvl:3, id:"depth_strider"}]}}]}
+execute unless entity @e[tag=Jim] as @e[tag=leader, limit=1] at @s run summon minecraft:piglin ~ ~ ~ {IsImmuneToZombification: 1b, Tags:[Jim], PersistenceRequired: 1b, Invulnerable:1b, CustomName:"\"Jimmy\"", Attributes:[{Base:0d, Name:"generic.attack_damage"}], ArmorItems:[{Count:1,id:golden_boots, tag:{Damage:0, Enchantments:[{lvl:3, id:"depth_strider"}]}}]}
 team join piglin @e[tag= Jim, limit=1]
 team join piglin @e[tag= leader, limit=1]
 team modify piglin collisionRule never
