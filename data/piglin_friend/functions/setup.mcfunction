@@ -8,7 +8,10 @@ team join piglin @e[tag= leader, limit=1]
 team modify piglin collisionRule never
 execute as @e[tag=Jim, limit=1] run function piglin_friend:setreturnpoint 
 scoreboard objectives add piglin_friend dummy
+scoreboard players set canDetectMob piglin_friend 1
+scoreboard players set 1 piglin_friend 1
 execute unless score controlByVil piglin_friend matches 0..1 run scoreboard players add controlByVil piglin_friend 1
 function piglin_friend:tpreturnpoint
 function piglin_friend:gotoplayer
 function piglin_friend:portalcooldown
+function piglin_friend:detectmob
