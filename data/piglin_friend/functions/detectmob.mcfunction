@@ -16,11 +16,11 @@ execute if score canDetectMob piglin_friend matches 1 as @e[tag= Jim, limit=1] a
 execute if score canDetectMob piglin_friend matches 1 as @e[tag= Jim, limit=1] at @s if entity @e[type= minecraft:parrot, distance = 0..20, limit=1] run execute as @e[tag= Jim, limit=1] run say Isn't that a air plane? but..but..it can dance...
 execute if score canDetectMob piglin_friend matches 1 as @e[tag= Jim, limit=1] at @s if entity @e[type= minecraft:parrot, distance = 0..20, limit=1] run scoreboard players set canDetectMob piglin_friend 60
 
-execute if score canDetectMob piglin_friend matches 1 as @e[tag= Jim, limit=1] at @s if entity @e[type= minecraft:wolf, limit=1, nbt=!{Owner:[], distance=0..20, limit=1] run execute as @e[tag= Jim, limit=1] run say Doge! Much cute! Empty Owner! Much Lonely
-execute if score canDetectMob piglin_friend matches 1 as @e[tag= Jim, limit=1] at @s if entity @e[type= minecraft:wolf, distance = 0..20, limit=1] run scoreboard players set canDetectMob piglin_friend 60
+#execute if score canDetectMob piglin_friend matches 1 as @e[tag= Jim, limit=1] at @s if entity @e[type= minecraft:wolf, limit=1, nbt=!{Owner:[], distance=0..20, limit=1] run execute as @e[tag= Jim, limit=1] run say Doge! Much cute! Empty Owner! Much Lonely
+#execute if score canDetectMob piglin_friend matches 1 as @e[tag= Jim, limit=1] at @s if entity @e[type= minecraft:wolf, distance = 0..20, limit=1] run scoreboard players set canDetectMob piglin_friend 60
 
-execute if score canDetectMob piglin_friend matches 1 as @e[tag= Jim, limit=1] at @s if entity @e[type= minecraft:cat, limit=1, nbt=!{Owner:[], distance=0..20, limit=1] run execute as @e[tag= Jim, limit=1] run say You may want to give this cat more attention
-execute if score canDetectMob piglin_friend matches 1 as @e[tag= Jim, limit=1] at @s if entity @e[type= minecraft:cat, distance = 0..20, limit=1] run scoreboard players set canDetectMob piglin_friend 60
+#execute if score canDetectMob piglin_friend matches 1 as @e[tag= Jim, limit=1] at @s if entity @e[type= minecraft:cat, limit=1, nbt=!{Owner:[], distance=0..20, limit=1] run execute as @e[tag= Jim, limit=1] run say You may want to give this cat more attention
+#execute if score canDetectMob piglin_friend matches 1 as @e[tag= Jim, limit=1] at @s if entity @e[type= minecraft:cat, distance = 0..20, limit=1] run scoreboard players set canDetectMob piglin_friend 60
 
 execute if score canDetectMob piglin_friend matches 1 as @e[tag= Jim, limit=1] at @s if entity @e[type= minecraft:vindicator, distance = 0..20, limit=1] run execute as @e[tag= Jim, limit=1] run say I don't think this villager-like creature with his axe is friendly...
 execute if score canDetectMob piglin_friend matches 1 as @e[tag= Jim, limit=1] at @s if entity @e[type= minecraft:vindicator, distance = 0..20, limit=1] run scoreboard players set canDetectMob piglin_friend 60
