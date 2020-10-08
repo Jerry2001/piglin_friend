@@ -4,6 +4,7 @@
 #execute if data entity @e[tag= Jim, limit=1] Brain.memories."minecraft:angry_at".ttl run data modify entity @e[tag=Jim, limit=1] Silent set value 1b
 #execute if data entity @e[tag= Jim, limit=1] Brain.memories."minecraft:angry_at".ttl run data modify entity @e[tag=Jim, limit=1] Silent set value 0b
 
+execute store result score canPickupLoot piglin_friend run data get entity @e[tag= Jim, limit=1] CanPickUpLoot
 effect give @e[tag=leader,limit=1] minecraft:invisibility 2 1 true
 execute unless data entity @e[tag= Jim, limit=1] Brain.memories."minecraft:admiring_item" if score controlByVil piglin_friend matches 1 run tp @e[tag=Jim] @e[tag=leader, limit=1]
 execute if score controlByVil piglin_friend matches 0 run tp @e[tag=leader] @e[tag=Jim, limit=1]
@@ -17,3 +18,6 @@ execute if data entity @e[tag= Jim, limit=1] Brain.memories."minecraft:angry_at"
 execute if data entity @e[tag= Jim, limit=1] Brain.memories."minecraft:angry_at".ttl run scoreboard players set controlByVil piglin_friend 0
 execute unless data entity @e[tag= Jim, limit=1] Brain.memories."minecraft:admiring_item" unless data entity @e[tag= Jim, limit=1] Brain.memories."minecraft:angry_at".ttl run scoreboard players set controlByVil piglin_friend 1
 execute as @e[tag=Jim, limit=1] at @s unless entity @e[tag= return, limit=1, distance=0..160] run function piglin_friend:tpreturnpoint
+
+execute as @e[tag=Jim, limit=1] at @s if entity @e[type=minecraft:item,nbt={Item:{id:"minecraft:crossbow"}}, distance= 0..3] run data modify entity @e[tag= Jim, limit=1] CanPickUpLoot set value 0b
+execute as @e[tag=Jim, limit=1] at @s if score canPickupLoot piglin_friend matches 0 unless entity @e[type=minecraft:item,nbt={Item:{id:"minecraft:crossbow"}}, distance= 0..3] run data modify entity @e[tag= Jim, limit=1] CanPickUpLoot set value 1b
