@@ -1,5 +1,6 @@
 #data modify entity @e[tag= Jim, limit = 1] Brain.memories."minecraft:angry_at".value set from entity JerryNgo UUID
 #function piglin_friend:kill
+scoreboard objectives add piglin_friend dummy
 team add piglin
 function piglin_friend:spawnitem
 execute unless entity @e[tag=leader] as @p at @s run summon minecraft:villager ~ ~ ~ {Tags:[leader], PersistenceRequired: 1b, Invulnerable:1b, Silent:1b, VillagerData:{level:1,profession:"minecraft:nitwit",type:"minecraft:desert"}}
@@ -9,7 +10,7 @@ team join piglin @e[tag= Jim, limit=1]
 team join piglin @e[tag= leader, limit=1]
 team modify piglin collisionRule never
 execute as @e[tag=Jim, limit=1] run function piglin_friend:setreturnpoint 
-scoreboard objectives add piglin_friend dummy
+execute unless score followMode piglin_friend matches 0..1 run scoreboard players set followMode piglin_friend 0
 scoreboard players set canDetectMob piglin_friend 1
 scoreboard players set 1 piglin_friend 1
 scoreboard players set canGiveItem piglin_friend 1
