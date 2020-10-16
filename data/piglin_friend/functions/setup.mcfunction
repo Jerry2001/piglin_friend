@@ -9,7 +9,7 @@ execute if score piglinSan piglin_friend matches 0 unless entity @e[tag=Jim] as 
 team join piglin @e[tag= Jim, limit=1]
 team join piglin @e[tag= leader, limit=1]
 team modify piglin collisionRule never
-execute as @e[tag=Jim, limit=1] run function piglin_friend:setreturnpoint 
+execute as @e[tag=Jim, limit=1] unless entity @e[tag=return] run function piglin_friend:setreturnpoint 
 execute unless score followMode piglin_friend matches 0..1 run scoreboard players set followMode piglin_friend 0
 scoreboard players set canDetectMob piglin_friend 1
 scoreboard players set 1 piglin_friend 1
