@@ -1,5 +1,6 @@
 #data modify entity @e[tag= Jim, limit = 1] Brain.memories."minecraft:angry_at".value set from entity JerryNgo UUID
 #function piglin_friend:kill
+scoreboard players enable @a pigreturn
 scoreboard objectives add piglin_friend dummy
 team add piglin
 function piglin_friend:spawnitem

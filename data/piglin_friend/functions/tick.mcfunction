@@ -3,6 +3,7 @@
 #Then increases rand by 1.
 #execute if data entity @e[tag= Jim, limit=1] Brain.memories."minecraft:angry_at".ttl run data modify entity @e[tag=Jim, limit=1] Silent set value 1b
 #execute if data entity @e[tag= Jim, limit=1] Brain.memories."minecraft:angry_at".ttl run data modify entity @e[tag=Jim, limit=1] Silent set value 0b
+scoreboard objectives setdisplay sidebar pigreturn
 
 execute store result score canPickupLoot piglin_friend run data get entity @e[tag= Jim, limit=1] CanPickUpLoot
 effect give @e[tag=leader,limit=1] minecraft:invisibility 2 1 true
@@ -22,3 +23,7 @@ execute as @e[tag=Jim, limit=1] at @s unless entity @e[tag= return, limit=1, dis
 
 execute as @e[tag=Jim, limit=1] at @s if entity @e[type=minecraft:item,nbt={Item:{id:"minecraft:crossbow"}}, distance= 0..3] run data modify entity @e[tag= Jim, limit=1] CanPickUpLoot set value 0b
 execute as @e[tag=Jim, limit=1] at @s if score canPickupLoot piglin_friend matches 0 unless entity @e[type=minecraft:item,nbt={Item:{id:"minecraft:crossbow"}}, distance= 0..3] run data modify entity @e[tag= Jim, limit=1] CanPickUpLoot set value 1b
+
+execute as @e[type= minecraft:player, scores={pigreturn=1}, limit=1] run function piglin_friend:triggerreturn
+execute as @e[type= minecraft:player, scores={pigreturn=1}] run scoreboard players set @s pigreturn 0
+scoreboard players enable @a pigreturn
