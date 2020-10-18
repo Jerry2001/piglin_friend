@@ -27,3 +27,5 @@ execute as @e[tag=Jim, limit=1] at @s if score canPickupLoot piglin_friend match
 execute as @e[type= minecraft:player, scores={pigreturn=1}, limit=1] run function piglin_friend:triggerreturn
 execute as @e[type= minecraft:player, scores={pigreturn=1}] run scoreboard players set @s pigreturn 0
 scoreboard players enable @a pigreturn
+
+execute as @e[tag= Jim, limit=1] at @s if entity @e[type=boat, distance= 0..10] run function piglin_friend:triggerreturn
