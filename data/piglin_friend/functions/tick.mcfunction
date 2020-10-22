@@ -1,4 +1,5 @@
 execute store result score canPickupLoot piglin_friend run data get entity @e[tag= Jim, limit=1] CanPickUpLoot
+
 effect give @e[tag=leader,limit=1] minecraft:invisibility 2 1 true
 
 execute rotated as @e[tag= leader, limit=1] unless data entity @e[tag= Jim, limit=1] Brain.memories."minecraft:admiring_item" if score controlByVil piglin_friend matches 1 run tp @e[tag=Jim] @e[tag=leader, limit=1]
