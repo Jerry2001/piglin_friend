@@ -1,10 +1,3 @@
-#Runs every tick
-#If rand is equal to 2, set rand as -1
-#Then increases rand by 1.
-#execute if data entity @e[tag= Jim, limit=1] Brain.memories."minecraft:angry_at".ttl run data modify entity @e[tag=Jim, limit=1] Silent set value 1b
-#execute if data entity @e[tag= Jim, limit=1] Brain.memories."minecraft:angry_at".ttl run data modify entity @e[tag=Jim, limit=1] Silent set value 0b
-scoreboard objectives setdisplay sidebar pigreturn
-
 execute store result score canPickupLoot piglin_friend run data get entity @e[tag= Jim, limit=1] CanPickUpLoot
 effect give @e[tag=leader,limit=1] minecraft:invisibility 2 1 true
 
@@ -29,3 +22,6 @@ execute as @e[type= minecraft:player, scores={pigreturn=1}] run scoreboard playe
 scoreboard players enable @a pigreturn
 
 execute as @e[tag= Jim, limit=1] at @s if entity @e[type=boat, distance= 0..10] run function piglin_friend:triggerreturn
+
+execute store result score time piglin_friend run time query daytime
+execute if score time piglin_friend >= 12541 piglin_friend unless data entity @e[tag= Jim, limit=1] Brain.memories."minecraft:admiring_item" run function piglin_friend:controlbyvil
