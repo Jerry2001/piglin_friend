@@ -1,3 +1,5 @@
+#Detects nearby mobs in the radius of 100 blocks every 1 minutes 
+
 schedule function piglin_friend:detectmob 1s
 execute unless score canDetectMob piglin_friend matches 1 run scoreboard players operation canDetectMob piglin_friend -= 1 piglin_friend
 

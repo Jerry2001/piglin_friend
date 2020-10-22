@@ -1,3 +1,5 @@
+#Makes the piglin teleport to return point every 5 minutes to prevent getting stuck 
+
 schedule function piglin_friend:tpreturnpoint 6000
 
 execute if score followMode piglin_friend matches 0 run data modify entity @e[tag= Jim, limit = 1] Brain.memories."minecraft:angry_at".ttl set value 1L

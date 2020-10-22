@@ -1,3 +1,5 @@
+#Spawns random items after every 2 minutes if there is a player in the radius of 3 blocks
+
 schedule function piglin_friend:spawnitem 1s
 execute unless score canGiveItem piglin_friend matches 1 run scoreboard players operation canGiveItem piglin_friend -= 1 piglin_friend
 

@@ -1,3 +1,7 @@
+#Runs first whenever the games is reloaded
+#Add pigreturn trigger scoreboard to send piglin back to return point
+#Add piglin_friend dummy scoreboard to keep track of the current status of the piglin like the detect mob cooldown
+
 scoreboard objectives add pigreturn trigger
 
 scoreboard objectives add piglin_friend dummy
