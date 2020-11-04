@@ -1,4 +1,4 @@
-#Switchs piglin to follow mode
+#Switchs piglin to following mode
 
 scoreboard players set followMode piglin_friend 1
 schedule clear piglin_friend:gotoplayer
