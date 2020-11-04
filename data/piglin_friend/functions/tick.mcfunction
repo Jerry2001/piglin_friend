@@ -16,7 +16,7 @@ execute if data entity @e[tag= Jim, limit=1] Brain.memories."minecraft:admiring_
 execute unless data entity @e[tag= Jim, limit=1] Brain.memories."minecraft:admiring_item" run scoreboard players set controlByVil piglin_friend 1
 
 #Controls the chasing behavior
-execute if data entity @e[tag= Jim, limit=1] Brain.memories."minecraft:angry_at".ttl unless data entity @e[tag= Jim, limit=1] Brain.memories."minecraft:admiring_item" as @e[tag=Jim, limit=1] at @s if entity @e[type=minecraft:player, distance=0..3] run data modify entity @e[tag= Jim, limit = 1] Brain.memories."minecraft:angry_at".ttl set value 1L
+execute if data entity @e[tag= Jim, limit=1] Brain.memories."minecraft:angry_at".ttl unless data entity @e[tag= Jim, limit=1] Brain.memories."minecraft:admiring_item" as @e[tag=Jim, limit=1] at @s if entity @e[type=minecraft:player, distance=0..4] run data modify entity @e[tag= Jim, limit = 1] Brain.memories."minecraft:angry_at".ttl set value 1L
 execute if data entity @e[tag= Jim, limit=1] Brain.memories."minecraft:angry_at".ttl run scoreboard players set controlByVil piglin_friend 0
 execute unless data entity @e[tag= Jim, limit=1] Brain.memories."minecraft:admiring_item" unless data entity @e[tag= Jim, limit=1] Brain.memories."minecraft:angry_at".ttl run scoreboard players set controlByVil piglin_friend 1
 execute as @e[tag=Jim, limit=1] at @s unless entity @e[tag= return, limit=1, distance=0..160] run function piglin_friend:tpreturnpoint
@@ -30,8 +30,8 @@ execute as @e[type= minecraft:player, scores={pigreturn=1}, limit=1] run functio
 execute as @e[type= minecraft:player, scores={pigreturn=1}] run scoreboard players set @s pigreturn 0
 scoreboard players enable @a pigreturn
 
-#Makes piglin returns to the return point when there is a boat in radius of 10 blocks
-execute as @e[tag= Jim, limit=1] at @s if entity @e[type=boat, distance= 0..10] run function piglin_friend:triggerreturn
+#Makes piglin returns to the return point when there is a boat in radius of 8 blocks
+execute as @e[tag= Jim, limit=1] at @s if entity @e[type=boat, distance= 0..8] run function piglin_friend:triggerreturn
 
 #Makes piglin unable to chase players if it is nighttime
 execute store result score time piglin_friend run time query daytime
