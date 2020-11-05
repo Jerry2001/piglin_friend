@@ -26,6 +26,7 @@ execute unless score controlByVil piglin_friend matches 0..1 run scoreboard play
 
 data modify entity @e[tag= leader, limit=1] NoAI set value 0
 
+function piglin_friend:regeneration
 function piglin_friend:tpreturnpoint
 function piglin_friend:gotoplayer
 function piglin_friend:portalcooldown
