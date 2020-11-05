@@ -47,4 +47,6 @@ execute if score deathTime piglin_friend matches 0 run scoreboard players operat
 #Villager does not cause suffocation
 execute store result score age piglin_friend run data get entity @e[tag= leader, limit=1] Age
 execute unless score age piglin_friend matches 0 as @e[tag=leader, limit=1] at @s if block ^ ^ ^1 minecraft:air unless block ^ ^1 ^1 minecraft:air run data modify entity @s Age set value 0
-execute unless score age piglin_friend matches 0 as @e[tag=leader, limit=1] at @s if block ^ ^1 ^1 minecraft:air unless block ^ ^ ^1 minecraft:air run data modify entity @s Age set value 0
+execute unless score age piglin_friend matches 0 as @e[tag=leader, limit=1] at @s if block ^ ^1 ^1 minecraft:air unless block ^ ^ ^1 minecraft:air unless block ^ ^ ^1 #minecraft:small_flowers unless block ^ ^ ^1 #minecraft:tall_flowers unless block ^ ^ ^1 minecraft:grass unless block ^ ^ ^1 minecraft:tall_grass run data modify entity @s Age set value 0
+
+#unless block ^ ^2 ^1 minecraft:air 
