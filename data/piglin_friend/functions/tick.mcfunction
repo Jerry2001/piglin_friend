@@ -43,3 +43,8 @@ execute unless entity @e[tag= Jim, limit=1] if score deathTime piglin_friend mat
 execute unless entity @e[tag= Jim, limit=1] unless score deathTime piglin_friend matches 0 run scoreboard players operation deathTime piglin_friend -= 1 piglin_friend
 execute if score deathTime piglin_friend matches 0 run function piglin_friend:setup
 execute if score deathTime piglin_friend matches 0 run scoreboard players operation deathTime piglin_friend -= 1 piglin_friend
+
+#Villager does not cause suffocation
+execute store result score age piglin_friend run data get entity @e[tag= leader, limit=1] Age
+execute unless score age piglin_friend matches 0 as @e[tag=leader, limit=1] at @s if block ^ ^ ^1 minecraft:air unless block ^ ^1 ^1 minecraft:air run data modify entity @s Age set value 0
+execute unless score age piglin_friend matches 0 as @e[tag=leader, limit=1] at @s if block ^ ^1 ^1 minecraft:air unless block ^ ^ ^1 minecraft:air run data modify entity @s Age set value 0

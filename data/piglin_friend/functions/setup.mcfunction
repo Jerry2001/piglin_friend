@@ -24,6 +24,8 @@ execute unless score followMode piglin_friend matches 0..1 run scoreboard player
 execute unless score piglinSan piglin_friend matches 0..1 run scoreboard players set piglinSan piglin_friend 0
 execute unless score controlByVil piglin_friend matches 0..1 run scoreboard players add controlByVil piglin_friend 1
 
+data modify entity @e[tag= leader, limit=1] NoAI set value 0
+
 function piglin_friend:tpreturnpoint
 function piglin_friend:gotoplayer
 function piglin_friend:portalcooldown
