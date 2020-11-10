@@ -32,4 +32,3 @@ function piglin_friend:gotoplayer
 function piglin_friend:portalcooldown
 function piglin_friend:detectmob
 function piglin_friend:spawnitem
-function piglin_friend:babyvillager
