@@ -32,7 +32,7 @@ scoreboard players enable @a pigreturn
 
 #Makes piglin returns to the return point when there is a boat in radius of 8 blocks
 execute as @e[tag= Jim, limit=1] at @s if entity @e[type=boat, distance= 0..8] if score controlByVil piglin_friend matches 0 run function piglin_friend:controlbyvil
-execute as @e[tag= Jim, limit=1] at @s if entity @e[type=boat, distance= 0..8] run execute as @e[type= minecraft:boat, sort= nearest, limit=1] at @s unless entity @e[type= minecraft:vex, limit=1, distance=0..3] run summon minecraft:vex ~ ~2 ~ {ActiveEffects:[{Id:14,Amplifier:0,Duration:100000,ShowParticles:0b}], Silent: 1b, Tags:[toKill], NoAI: 1b, DeathTime: 19}
+execute as @e[tag= Jim, limit=1] at @s if entity @e[type=boat, distance= 0..8] run execute as @e[type= minecraft:boat, sort= nearest, limit=1] at @s unless entity @e[type= minecraft:vex, limit=1, distance=0..5] run summon minecraft:vex ~ ~ ~ {ActiveEffects:[{Id:14,Amplifier:0,Duration:0,ShowParticles:0b}], Silent: 1b, Tags:[toKill], NoAI: 1b, DeathTime: 19}
 
 #Makes piglin unable to chase players if it is nighttime
 execute store result score time piglin_friend run time query daytime
