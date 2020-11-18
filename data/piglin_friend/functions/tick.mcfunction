@@ -32,7 +32,7 @@ scoreboard players enable @a pigreturn
 
 #Makes piglin returns to the return point when there is a boat in radius of 8 blocks
 execute as @e[tag= Jim, limit=1] at @s if entity @e[type=boat, distance= 0..8] if score controlByVil piglin_friend matches 0 run function piglin_friend:controlbyvil
-execute as @e[tag= Jim, limit=1] at @s if entity @e[type=boat, distance= 0..8] run execute as @e[type= minecraft:boat, sort= nearest, limit=1] at @s unless entity @e[type= minecraft:vex, limit=1, distance=0..1] run summon minecraft:vex ~ ~ ~ {ActiveEffects:[{Id:14,Amplifier:0,Duration:20000000,ShowParticles:0b}], Silent: 1b, Tags:[toKill], Invulnerable:1b, NoAI: 1b, DeathTime: 19}
+execute as @e[tag= Jim, limit=1] at @s if entity @e[type=boat, distance= 0..8] run execute as @e[type= minecraft:boat, sort= nearest, limit=1] at @s unless entity @e[type= minecraft:vex, limit=1, distance=0..3] run summon minecraft:vex ~ ~2 ~ {ActiveEffects:[{Id:14,Amplifier:0,Duration:100000,ShowParticles:0b}], Silent: 1b, Tags:[toKill], NoAI: 1b, DeathTime: 19}
 
 #Makes piglin unable to chase players if it is nighttime
 execute store result score time piglin_friend run time query daytime
@@ -49,11 +49,9 @@ execute store result score age piglin_friend run data get entity @e[tag= leader,
 
 execute if score age piglin_friend matches 0 as @e[tag= Jim, limit=1] at @s if entity @e[type= minecraft:arrow, distance= 0..3, nbt={inGround: 0b}] run function piglin_friend:babyvillager
 execute if score age piglin_friend matches 0 as @e[tag= Jim, limit=1] at @s if entity @e[type= minecraft:trident, distance= 0..3, nbt={inGround: 0b}] run function piglin_friend:babyvillager
-execute if score age piglin_friend matches 0 as @e[tag= Jim, limit=1] at @s if entity @e[type= minecraft:player, distance= 0..3] run function piglin_friend:babyvillager
+execute if score age piglin_friend matches 0 as @e[tag= Jim, limit=1] at @s if entity @e[type= minecraft:player, distance= 0..2] run function piglin_friend:babyvillager
 
 execute unless score age piglin_friend matches 0 as @e[tag=leader, limit=1] at @s if block ^ ^ ^1 minecraft:air unless block ^ ^1 ^1 minecraft:air run data modify entity @s Age set value 0
 execute unless score age piglin_friend matches 0 as @e[tag=leader, limit=1] at @s if block ^ ^1 ^1 minecraft:air unless block ^ ^ ^1 minecraft:air unless block ^ ^ ^1 #minecraft:small_flowers unless block ^ ^ ^1 #minecraft:tall_flowers unless block ^ ^ ^1 minecraft:grass unless block ^ ^ ^1 minecraft:tall_grass run data modify entity @s Age set value 0
-
-
 
 #unless block ^ ^2 ^1 minecraft:air 
